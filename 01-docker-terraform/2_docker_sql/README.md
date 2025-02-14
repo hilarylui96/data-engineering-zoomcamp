@@ -54,6 +54,12 @@ Change the mounting path. Replace it with the following:
 
 #### Linux and MacOS
 
+* the e flag is for declaring the environmental variables
+* the v flag is volumes: mapping folder on the host machine to a folder in the container
+* you can use $(pwd) for you current directory on Linux or Mac but does not work on Windows
+* the p flag is for specifying the port 
+
+This command runs a PostgreSQL 13 database inside a Docker container 
 
 ```bash
 docker run -it \
@@ -65,6 +71,9 @@ docker run -it \
   postgres:13
 ```
 
+Once the container starts, you'll see a set of system folders and files that PostgreSQL needs to operate.
+PostgreSQL initializes these system files and directories the first time it runs in order to set up a new database cluster.
+
 If you see that `ny_taxi_postgres_data` is empty after running
 the container, try these:
 
@@ -75,6 +84,7 @@ the container, try these:
 ### CLI for Postgres
 
 Installing `pgcli`
+pgcli is a command-line interface (CLI) for PostgreSQL that provides auto-completion and syntax highlighting.
 
 ```bash
 pip install pgcli
