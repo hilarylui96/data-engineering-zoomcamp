@@ -104,6 +104,21 @@ pgcli -h localhost -p 5432 -u root -d ny_taxi
 ```
 
 
+Commonly Used Commands in pgcli
+
+| Command                         | Description                                      |
+|---------------------------------|--------------------------------------------------|
+| `\dt`                           | List all tables in the current schema           |
+| `\l`                            | List all databases                              |
+| `\c database_name`              | Switch to another database                      |
+| `\dn`                           | List all schemas                                |
+| `\d table_name`                 | Describe the structure of a table               |
+| `\df`                           | List all functions                              |
+| `\du`                           | List all users/roles                            |
+| `SELECT * FROM table_name LIMIT 10;` | View the first 10 rows of a table      |
+| `\x`                            | Toggle expanded output (better formatting for wide tables) |
+| `\q`                            | Exit `pgcli`                                    |
+
 ### NY Trips Dataset
 
 Dataset:
