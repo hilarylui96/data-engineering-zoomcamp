@@ -157,6 +157,11 @@ docker run -it \
 ### Running Postgres and pgAdmin together
 
 Create a network
+When using Docker to run both PostgreSQL and pgAdmin, creating a Docker network (e.g., pg-network) ensures that the two containers can communicate with each other using their container names instead of relying on localhost.
+
+* By default, Docker assigns a different network for each container, isolating them.
+* If you create a custom network (like pg-network), both PostgreSQL and pgAdmin can communicate over that network.
+* Without a custom network, you'd have to find the PostgreSQL container's IP address, which can change every time the container restarts.
 
 ```bash
 docker network create pg-network
@@ -169,15 +174,17 @@ docker run -it \
   -e POSTGRES_USER="root" \
   -e POSTGRES_PASSWORD="root" \
   -e POSTGRES_DB="ny_taxi" \
-  -v c:/Users/alexe/git/data-engineering-zoomcamp/week_1_basics_n_setup/2_docker_sql/ny_taxi_postgres_data:/var/lib/postgresql/data \
+  -v $(pwd)/ny_taxi_postgres_data:/var/lib/postgresql/data \
   -p 5432:5432 \
   --network=pg-network \
   --name pg-database \
   postgres:13
 ```
+pg_database is the name of your Postgres container. Without --name, Docker assigns a random name to the container (e.g., crazy_squirrel).
 
 Run pgAdmin
 
+pgadmin-2 is the name of your Pgadmin container
 ```bash
 docker run -it \
   -e PGADMIN_DEFAULT_EMAIL="admin@admin.com" \
