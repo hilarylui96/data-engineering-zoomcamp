@@ -195,6 +195,12 @@ docker run -it \
   dpage/pgadmin4
 ```
 
+### Jupyter Notebook
+
+Convert jupyter notebook to python script 
+```bash
+jupypter nbconvert --to=script name_of_ipynb_file
+```
 
 ### Data ingestion
 
@@ -250,6 +256,18 @@ docker run -it \
     --db=ny_taxi \
     --table_name=yellow_taxi_trips \
     --url=${URL}
+```
+
+This command does not work because we built Postgres inside pg_network 
+``` bash
+docker run  taxi_ingest:v001 
+ --user=root \
+  --password=root \
+  --host=localhost \
+  --port=5432 \
+  --db=ny_taxi \
+  --table_name=yellow_taxi_trips \
+  --url=${URL}
 ```
 
 ### Docker-Compose 
