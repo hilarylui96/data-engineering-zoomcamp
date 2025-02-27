@@ -97,7 +97,7 @@ conda install -c conda-forge pgcli
 pip install -U mycli
 ```
 
-Using `pgcli` to connect to Postgres
+Using `pgcli` to connect to Postgres locally 
 
 ```bash
 pgcli -h localhost -p 5432 -u root -d ny_taxi
@@ -247,16 +247,27 @@ Run the script with Docker
 URL="https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz"
 
 docker run -it \
-  --network=pg-network \
+ --network=pg_network  \
   taxi_ingest:v001 \
     --user=root \
     --password=root \
-    --host=pg-database \
+    --host=pgdatabase \
     --port=5432 \
     --db=ny_taxi \
     --table_name=yellow_taxi_trips \
     --url=${URL}
 ```
+
+docker run -it \
+ --network=pg_network  \
+  taxi_ingest:v001 \
+    --user=root \
+    --password=root \
+    --host=pgdatabase \
+    --port=5432 \
+    --db=ny_taxi \
+    --table_name=yellow_taxi_trips \
+    --url=${URL}
 
 This command does not work because we built Postgres inside pg_network 
 ``` bash
