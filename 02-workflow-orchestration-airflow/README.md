@@ -1,7 +1,7 @@
 ![Screenshot 2025-03-07 at 9 55 16 PM](https://github.com/user-attachments/assets/deb91a44-f28d-4b2e-b3bd-641faff32042)
 
 1. Setting up Airflow in a Docker Container: https://www.youtube.com/watch?v=aTaytcxy2Ck&ab_channel=DatawithMarc
-2. Mount Google Cloud credentials to Docker container
+2. Mount Google Cloud credentials to Docker container in docker-compose.yaml
 3. Set Google Cloud connection via Airflow UI and set "Keyfile Path" to where the credentials json file is in the Docker container
 4. Create requirement.txt and add the Python packages that you need
 5. Create Dockerfile and configure it to pip install the packages listed in the requirements.txt
