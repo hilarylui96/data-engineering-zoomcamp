@@ -8,7 +8,7 @@
 6. Create Dockerfile and configure it to pip install the packages listed in the requirements.txt
 7. Modify docker-compose.yaml to build the image defined in the Dockerfile (comment out image: ${AIRFLOW_IMAGE_NAME:-apache/airflow:2.10.5} and add build .)
 
-You can access your Docker Container / Airflow by clicking "Attach to Running Container" and select your Airflow Scheduler.
+You can access your Docker Container / Airflow by clicking "Attach to Running Container" and select the Airflow Scheduler.
 The pros of coding in the container is that there is auto-completion since Airflow is installed in the container but you might have to also install Python. 
 
 Troubleshoot: 
