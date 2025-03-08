@@ -22,3 +22,4 @@ Tips:
 - Just do docker-compose down && docker-compose up --build -d
 - https://registry.astronomer.io/providers Great resource to look up Airflow providers and Operators
 - Command + Shift + Space for displaying parameter for the function you are using
+- You can retrieve the DAG execution date in your Dag files using {{ execution_time }} (jinja code) 
