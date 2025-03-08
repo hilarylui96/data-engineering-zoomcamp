@@ -13,7 +13,7 @@ The pros of coding in the container is that there is auto-completion since Airfl
 
 Troubleshoot: 
 - If you cannot use Bash / open the terminal in your container, Command + Shift + P > Terminal: Select Default Profile > select bin/bash
-- if you cannot access Airflow UI, first check docker-ps to see the status of the webserver to confirm it is up and running. If it is, clear cache in your browser.
+- if you cannot access Airflow UI, first check docker-ps to see the status of the webserver to confirm it is up and running. If it is, try to clear cache in your browser.
 - If you run into a permission error when running pip install in your Dockerfile, it might be because the default user which is "airflow" does not have the permission to do so. Switch to user "root" and pip install and switch back to "airflow"
 
 Tips:
