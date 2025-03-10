@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: staging
+    database: durable-isotope-450722-i2
+    schema: airflow_de_zoomcamp
+
+    tables:
+    - name: green_tripdata
