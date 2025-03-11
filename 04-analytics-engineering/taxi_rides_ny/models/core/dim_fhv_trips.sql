@@ -5,9 +5,9 @@ SELECT
     EXTRACT(year from pickup_datetime) as year,
     EXTRACT(month from pickup_datetime) as month,
     fhv.PULocationID,
-    pickup_zone.borough as pickup_borough, 
+    pickup_zone.zone as pickup_zone, 
     fhv.DOLocationID,
-    dropoff_zone.borough as dropoff_borough, 
+    dropoff_zone.zone as dropoff_zone, 
     fhv.Affiliated_base_number
 FROM {{ ref('stg_fhv_tripdata') }} fhv
 inner join {{ ref('dim_zones') }} as pickup_zone
